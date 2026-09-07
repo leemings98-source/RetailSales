@@ -8,9 +8,10 @@ This sample dataset is obtained from kaggel. Tap [*here*](https://drive.google.c
 
 Insights and recommendations are provided on the following key areas:
 
-Product Level Performance: An analysis of the dataset's various product lines, understanding their impact on sales and returns.
-Loyalty Program Success: An assessment of the loyalty program on customer retention and sales
-Regional Comparisons: An evaluation of sales and orders by region
+- Product Level Performance: An analysis of the dataset's various product lines, understanding their impact on sales and returns.
+- Loyalty Program Success: An assessment of the loyalty program on customer retention and sales.
+- Regional Comparisons: An evaluation of sales and profit by region.
+- Customer Happiness: An evaluation of customer satisfaction by region.
 
 ## Data Structure Overview
 The dataset's base structure is made up of one table and 20 rows, consisting of: 'Order id', 'Order date', 'Customer Id', 'Customer Name', 'Age' ,'Gender', 'Region', 'City', 'Product Name', 'Quantity', 'Unit Price', 'Discount pct', 'Sales Amount', 'Profit', 'Shipping Costs', 'Payment Method', 'Customer Satisfaction', 'Return Flag', 'Order Status', and 'Days to Ship'. It also consists of a total of 4,200 rows of data making it an ideal dataset to clean up and analyze.
