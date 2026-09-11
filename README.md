@@ -27,8 +27,13 @@ Click [*here*](https://drive.google.com/file/d/19nchITkHaSc_gpCQ88CPJWE7F-PJrp6o
 <img width="1491" height="887" alt="{0DD6AD19-A051-44FE-9E57-6DCEE919DA90}" src="https://github.com/user-attachments/assets/d93104f2-8c27-49be-97b5-618fe7a99767" />
 
 
+## Sales Trends
+-
+-
+-
 
-An interactive PowerBI dashboard can be downloaded [*here*](https://drive.google.com/file/d/1fpYmMaGSu_NGuuluvZNY_rD-hs1FHdj8/view?usp=drive_link)
-The SQL queries utilized to inspect and perform quality check can be found [*here*](https://drive.google.com/file/d/19nchITkHaSc_gpCQ88CPJWE7F-PJrp6o/view?usp=sharing)
-the SQL queries utilized to clean, organized, and prepare data for the dashboard can be found *here*
-Targeted SQL queries regarding various business questions can be found *here*
+## Product Performance
+
+## Recommendations:
+
+
