@@ -20,20 +20,29 @@ The dataset's base structure is made up of one table and 20 rows, consisting of:
 
 Before starting the analysis a rudimentary cleaning of the data was done first such as cleaning up the duplicates as well as standardizing some of the data via excel before proceeding to a variety of checks and data familiarization in SQL. 
 
-Click [*here*](https://drive.google.com/file/d/19nchITkHaSc_gpCQ88CPJWE7F-PJrp6o/view?usp=sharing) for the SQL queries used to examine, analyze and polish the dataset.... Actually I think I should make another repository for this....?...I'll do it once I'm done with this then...   
+Click [*here*](https://drive.google.com/file/d/19nchITkHaSc_gpCQ88CPJWE7F-PJrp6o/view?usp=drive_link) for the SQL queries used to examine, analyze and polish the dataset.... Actually I think I should make another repository for this....?...I'll do it once I'm done with this then...   
 
 ## Overview findings
 <img width="1487" height="881" alt="{5E0D5B87-BFD7-46C0-A1C2-B63E0587A81B}" src="https://github.com/user-attachments/assets/9edea03a-b596-4fa7-9213-8e02a8093a85" />
 <img width="1491" height="887" alt="{0DD6AD19-A051-44FE-9E57-6DCEE919DA90}" src="https://github.com/user-attachments/assets/d93104f2-8c27-49be-97b5-618fe7a99767" />
 
-
-## Sales Trends
--
--
--
-
 ## Product Performance
+-
+-
+-
+## Service Performance
 
 ## Recommendations:
 
 
+
+
+
+
+
+
+
+## Self reflection
+- I should find a dataset with more accurate profit, sales price, and discount values.....This one was such a doozy.
+- I honestly still have no idea how to navigate Dax measures for ranking, perhaps I have yet to find the correct code for it... I wonder if tableau would be easier? I've been fighting with Power Bi for a bit and just gave up on making a formula for ranking.... ended up just using the readily available filter ranks ugh what a missed opportunity!...I'll have to go look at the formula's a little more to familiarize myself with them.. 
+- The proper use of words is important + labeling!! I had though I was on the wrong thought process when I went with count based calculations for products that were bought the most. The entire time I had forgotten that sum of quantity would also show that off. Apparently I was just confused between the frequency of an item being bought and the amount being sold....which would also show case "what items were bought the most" criteria.
