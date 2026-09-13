@@ -3,7 +3,7 @@
 ## Background Overview
 This sample dataset is obtained from kaggel. Tap [*here*](https://drive.google.com/file/d/1Gu6dPev0gi37cOZuMHf0Qxwylf6O4Fw-/view?usp=sharing) for the base file. 
 
-*Disclaimer I do not own this dataset,it is one of the many available datasets on kaggel with a rating of 9.8+ usability....it's just that I've forgotten which kaggel dataset it's from and thus am unable to link it back to where I got this datatset.*
+**Disclaimer I do not own this dataset,it is one of the many available datasets on kaggel with a rating of 9.8+ usability....it's just that I've forgotten which kaggel dataset it's from and thus am unable to link it back to where I got this datatset.*
 
 
 Insights and recommendations are provided on the following key areas:
@@ -24,9 +24,13 @@ Before starting the analysis a rudimentary cleaning of the data was done first s
 Click [*here*](https://drive.google.com/file/d/19nchITkHaSc_gpCQ88CPJWE7F-PJrp6o/view?usp=sharing) for the SQL queries used to examine, analyze and polish the dataset.... Actually I think I should make another repository for this....?...I'll do it once I'm done with this then...   
 
 ## Overview findings
+The company's profit has been alternating between a 3m increase and decrease after the year 2020, hovering between earning around 9m and 11m. Key Point Indicators have shown year-over-year Electronics' domination over the best selling category staying at an all time high. 
  Below is the overview page from the PowerBI dashboard and more examples are included throughout the report. The entire interactive dashboard can be downloaded [*here*](https://drive.google.com/file/d/1fpYmMaGSu_NGuuluvZNY_rD-hs1FHdj8/view?usp=sharing) 
-<img width="1482" height="879" alt="{EEAEE2E5-B00E-47E8-B591-41DC6C59AF1A}" src="https://github.com/user-attachments/assets/96a88b53-c716-4fe4-b92f-faa0e7065693" />
-<img width="1491" height="887" alt="{0DD6AD19-A051-44FE-9E57-6DCEE919DA90}" src="https://github.com/user-attachments/assets/d93104f2-8c27-49be-97b5-618fe7a99767" />
+
+<img width="1485" height="832" alt="{5939E85D-2EF9-485B-9A5C-6B0AF96E99F2}" src="https://github.com/user-attachments/assets/626befe0-bc96-422e-b288-786448a52725" />
+
+<img width="1484" height="836" alt="{024720EF-5744-4C92-A12F-4B3907FF5312}" src="https://github.com/user-attachments/assets/062aa544-676b-4e3b-9e1a-3ceba115ad95" />
+
 As an added bonus, the image on the left shows the most popular category in each region based on sales quantity/volume while the one on the right is based on the sales count/frequency.
 
 <img width="313" height="108" alt="{82613271-CBBD-4913-A268-3021208A21A1}" src="https://github.com/user-attachments/assets/c78efe5f-8727-4e6d-8d00-4a8eb332ae3f" />
