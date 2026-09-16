@@ -21,7 +21,7 @@ The dataset's base structure is made up of one table and 20 rows, consisting of:
 
 Before starting the analysis a rudimentary cleaning of the data was done first such as cleaning up the duplicates as well as standardizing some of the data via excel before proceeding to a variety of checks and data familiarization in SQL. 
 
-Click [*here*](https://drive.google.com/file/d/19nchITkHaSc_gpCQ88CPJWE7F-PJrp6o/view?usp=sharing) for the SQL queries used to examine, analyze and polish the dataset.... Actually I think I should make another repository for this....?...I'll do it once I'm done with this then...   
+Click [*here*](https://drive.google.com/file/d/19nchITkHaSc_gpCQ88CPJWE7F-PJrp6o/view?usp=sharing) for the SQL queries used to examine, analyze and polish the dataset.
 
 ## Overview findings
 The company's profit has been alternating between a 3m increase and decrease after the year 2020, hovering between earning around 9m and 11m. Key Point Indicators have shown year-over-year Electronics' domination over the best selling category staying at an all time high. Managing to earn a *minimum of 32%* to a *maximum of 49%* of *total profit* over the 5 year period.
@@ -41,25 +41,21 @@ As an added bonus, the image on the left shows the most popular category in each
 
 ## Product Performance
 - *Electronics* strongly dominates the entire sales ranking generating the *most sales amount* due to their high pricings, while Groceries suffers due to their lower pricings. Of course this isn't indicative to the sales capability each category has, just a measure of the sales amount garnered.
-- During 2021 Tennis Rackets managed to garner the position of the top sales product amidst the monopoly of electronic products. Bumping up the Sports category to 2nd place with 4M more in sales amount than the Furniture category(the original 2nd place).
+- During *2021 Tennis Rackets* managed to garner the position of the *top sales product* amidst the monopoly of electronic products. Bumping up the Sports category to 2nd place with *4M more* in *sales amount* than the *Furniture* category(the original 2nd place).
 
 ## Service Performance
-- Customer satisfaction over all regions seems to average out to around 2.75. Making service to be fairly ordinary to the majority of customers.
-- The East Region having the highest customer satisfaction score, 2.86, also had the lowest count of returns.
-- Central and West Region respectively both scoring the lowest on the average customer satisfaction, had more counts of 1 star reviews over 5 star reviews compared to the other 3 regions.
-- 
+- *Customer satisfaction* over all regions seems to *average* out to around *2.75*. Making service to be fairly ordinary to the majority of customers.
+- The *East Region* has the *highest customer satisfaction score* - 2.86, as well as the lowest counts of returns amongst all regions.
+- *Central* and *West* Region respectively both scored the *lowest* on the *average customer satisfaction* (with only 0.01 difference between the two), had more counts of 1 star reviews over 5 star reviews compared to the other 3 regions.
+-  Central Region also earned the lowest sales amount compared to the other regions only reaching 55.32%(RM40.67M) of the highest sales amount, South's RM73.52M.
 
 ## Recommendations:
-
-
-
-
-
-
+- The South region's services should be looked into more, identifying the reasons behind their performance. Perhaps looking towards the East's, for tips yo improving their services/performance.
+- Look into the the years 2022 and 2024 to see why profit sales dropped by 3M and increased by 3M in the next years. Specifically why 3M? Was there something similarly done that attributed to the 3M loss?
 
 
 
 ## Self reflection
-- I should find a dataset with more accurate profit, sales price, and discount values.....This one was such a doozy.
-- I honestly still have no idea how to navigate Dax measures for ranking, perhaps I have yet to find the correct code for it... I wonder if tableau would be easier? I've been fighting with Power Bi for a bit and just gave up on making a formula for ranking.... ended up just using the readily available filter ranks ugh what a missed opportunity!...I'll have to go look at the formula's a little more to familiarize myself with them.. 
+- I should find a dataset with more accurate profit, sales price, and discount values.....This one was such a doozy. Many of the information gleaned from this dataset is far too made up....
+- I honestly still have no idea how to navigate Dax measures for ranking, perhaps I have yet to find the correct code for it... I wonder if tableau would be easier? I've been fighting with Power Bi for a bit and just gave up on making a formula for ranking.... ended up just using the readily available filter ranks.... ugh what a missed opportunity!...I'll have to go look at the formula's a little more to familiarize myself with them.. 
 - The proper use of words is important + labeling!! I had though I was on the wrong thought process when I went with count based calculations for products that were bought the most. The entire time I had forgotten that sum of quantity of product bought would also show that off. Apparently I was just confused between the frequency of an item being bought and the quantity being sold....which would also answer the "what items were bought the most" criteria.
