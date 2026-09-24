@@ -3,7 +3,7 @@
 ## Background Overview
 This sample dataset is obtained from kaggel. Tap [*here*](https://drive.google.com/file/d/1Gu6dPev0gi37cOZuMHf0Qxwylf6O4Fw-/view?usp=sharing) for the base file. 
 
-**Disclaimer I do not own this dataset,it is one of the many available datasets on kaggel with a rating of 9.8+ usability....it's just that I've forgotten which kaggel dataset it's from and thus am unable to link it back to where I got this datatset.*
+**Disclaimer I do not own this dataset,it is one of the many available datasets on kaggel with a rating of 9.8+ usability....it's just that I've forgotten which kaggel dataset it's from and thus am unable to link it back to where I got it.*
 
 
 Insights and recommendations are provided on the following key areas:
@@ -15,7 +15,7 @@ Insights and recommendations are provided on the following key areas:
 An interactive PowerBI dashboard can be downloaded [*here*](https://drive.google.com/file/d/1fpYmMaGSu_NGuuluvZNY_rD-hs1FHdj8/view?usp=sharing)
 
 ## Data Structure Overview
-The dataset's base structure is made up of one table and 20 rows, consisting of: 'Order id', 'Order date', 'Customer Id', 'Customer Name', 'Age' ,'Gender', 'Region', 'City', 'Product Name', 'Quantity', 'Unit Price', 'Discount pct', 'Sales Amount', 'Profit', 'Shipping Costs', 'Payment Method', 'Customer Satisfaction', 'Return Flag', 'Order Status', and 'Days to Ship'. It also consists of a total of 4,200 rows of data making it an ideal dataset to clean up and analyze.
+The dataset's base structure is made up of one table and 20 columns, consisting of: 'Order id', 'Order date', 'Customer Id', 'Customer Name', 'Age' ,'Gender', 'Region', 'City', 'Product Name', 'Quantity', 'Unit Price', 'Discount pct', 'Sales Amount', 'Profit', 'Shipping Costs', 'Payment Method', 'Customer Satisfaction', 'Return Flag', 'Order Status', and 'Days to Ship'. It also consists of a total of 4,200 rows of data making it an ideal dataset to clean up and analyze.
 
 <img width="285" height="620" alt="{750A6AFC-1017-4C3E-B243-D87E63B8ACA8}" src="https://github.com/user-attachments/assets/cc0c1719-a6ff-4b9d-9d09-99ac4b74d92c" />
 
@@ -24,7 +24,7 @@ Before starting the analysis a rudimentary cleaning of the data was done first s
 Click [*here*](https://drive.google.com/file/d/19nchITkHaSc_gpCQ88CPJWE7F-PJrp6o/view?usp=sharing) for the SQL queries used to examine, analyze and polish the dataset.
 
 ## Overview findings
-The company's profit has been alternating between a 3m increase and decrease after the year 2020, hovering between earning around 9m and 11m. Key Point Indicators have shown year-over-year Electronics' domination over the best selling category staying at an all time high. Managing to earn a *minimum of 32%* to a *maximum of 49%* of *total profit* over the 5 year period.
+Within the dataset, annual profit fluctuates after 2020, with approximately RM3M changes between certain years, hovering between earning around 9m and 11m. Key Point Indicators have shown year-over-year Electronics' domination over the best selling category staying at an all time high. Managing to earn a *minimum of 32%* to a *maximum of 49%* of *total profit* over the 5 year period.
 
  Below is the overview page from the PowerBI dashboard and more examples are included throughout the report. The entire interactive dashboard can be downloaded [*here*](https://drive.google.com/file/d/1fpYmMaGSu_NGuuluvZNY_rD-hs1FHdj8/view?usp=sharing) 
 
@@ -46,16 +46,15 @@ As an added bonus, the image on the left shows the most popular category in each
 ## Service Performance
 - *Customer satisfaction* over all regions seems to *average* out to around *2.75*. Making service to be fairly ordinary to the majority of customers.
 - The *East Region* has the *highest customer satisfaction score* - 2.86, as well as the lowest counts of returns amongst all regions.
-- *Central* and *West* Region respectively both scored the *lowest* on the *average customer satisfaction* (with only 0.01 difference between the two), had more counts of 1 star reviews over 5 star reviews compared to the other 3 regions.
+- *Central* and *West* Region respectively both scored the *lowest* on the *average customer satisfaction* (with 0.01 difference between the two), had more counts of 1 star reviews over 5 star reviews compared to the other 3 regions.
 -  Central Region also earned the lowest sales amount compared to the other regions only reaching 55.32%(RM40.67M) of the highest sales amount, South's RM73.52M.
 
 ## Recommendations:
-- The South region's services should be looked into more, identifying the reasons behind their performance. Perhaps looking towards the East's, for tips yo improving their services/performance.
+- Investigate the drivers of lower satisfaction in Central and West, particularly the higher volume of 1-star reviews. The East region could provide a useful comparison point because it records higher average satisfaction and fewer returns
 - Look into the the years 2022 and 2024 to see why profit sales dropped by 3M and increased by 3M in the next years. Specifically why 3M? Was there something similarly done that attributed to the 3M loss?
 
 
 
 ## Self reflection
 - I should find a dataset with more accurate profit, sales price, and discount values.....This one was such a doozy. Many of the information gleaned from this dataset is far too made up....
-- I honestly still have no idea how to navigate Dax measures for ranking, perhaps I have yet to find the correct code for it... I wonder if tableau would be easier? I've been fighting with Power Bi for a bit and just gave up on making a formula for ranking.... ended up just using the readily available filter ranks.... ugh what a missed opportunity!...I'll have to go look at the formula's a little more to familiarize myself with them.. 
-- The proper use of words is important + labeling!! I had though I was on the wrong thought process when I went with count based calculations for products that were bought the most. The entire time I had forgotten that sum of quantity of product bought would also show that off. Apparently I was just confused between the frequency of an item being bought and the quantity being sold....which would also answer the "what items were bought the most" criteria.
+-Metric definitions: I initially confused purchase frequency with quantity sold when identifying the most-purchased products. This highlighted the importance of defining business terms such as "most popular" before selecting a metric.
