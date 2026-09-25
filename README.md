@@ -7,13 +7,18 @@ This sample dataset is obtained from kaggel. Click [*here*](https://drive.google
 
 
 | Table of contents|
-|-----------------------------------------------|
-[1. Project Overview](#-project_overview) |                
-|2. [Data Preparation](https://github.com/leemings98-source/RetailSales/edit/main/README.md#service-performance)      |        
-| - [Analytical Questions]()      |     
-| - [Business Interpretation]()      |     
-| - [Data Limitations]()      |     
-| - [What I Learned]()      |     
+|---------------------------------------------------------|
+|1. [Project Overview](#-project_overview)                |                
+|2. [Data Preparation](#-data-preperation)                |        
+|3. [Analytical Questions](#-analytical-questions)        |     
+|4. [Business Interpretation](#-business-interpretation)  |     
+|5. [Data Limitations](#-data-limitations)                |     
+|6. [What I Learned](#-what-i-learned)                    |     
+
+Links for easy access 
+- [Base Raw Dataset](https://drive.google.com/file/d/1Gu6dPev0gi37cOZuMHf0Qxwylf6O4Fw-/view?usp=sharing)
+- [Interactive PowerBI Dashboard](https://drive.google.com/file/d/1fpYmMaGSu_NGuuluvZNY_rD-hs1FHdj8/view?usp=sharing)
+- [SQL Data Cleaning and EDA](https://drive.google.com/file/d/19nchITkHaSc_gpCQ88CPJWE7F-PJrp6o/view?usp=sharing)
 
 Insights and recommendations are provided on the following key areas:
 
