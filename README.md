@@ -8,13 +8,13 @@ This sample dataset is obtained from kaggel. Click [*here*](https://drive.google
 
 | Table of contents|
 |---------------------------------------------------------|
-|1. [Project Overview]([#-project_overview](https://github.com/leemings98-source/RetailSales/blob/main/README.md#project-overview))                |                
-|2. [Data Preparation]([#-data-preperation](https://github.com/leemings98-source/RetailSales/blob/main/README.md#data-preparation))                |        
-|3. [Analytical Questions]([#-analytical-questions](https://github.com/leemings98-source/RetailSales/blob/main/README.md#analytical-questions))        |  
+|1. [Project Overview](https://github.com/leemings98-source/RetailSales/blob/main/README.md#project-overview)|                
+|2. [Data Preparation](https://github.com/leemings98-source/RetailSales/blob/main/README.md#data-preparation)|        
+|3. [Analytical Questions](https://github.com/leemings98-source/RetailSales/blob/main/README.md#analytical-questions)        |  
 |4. [Key Findings](https://github.com/leemings98-source/RetailSales/blob/main/README.md#key-findings)
-|5. [Business Interpretation]([#-business-interpretation](https://github.com/leemings98-source/RetailSales/blob/main/README.md#business-interpretation))  |     
-|5. [Data Limitations]([#-data-limitations](https://github.com/leemings98-source/RetailSales/blob/main/README.md#data-limitations))                |     
-|6. [What I Learned]([#-what-i-learned](https://github.com/leemings98-source/RetailSales/blob/main/README.md#what-i-learned))                    |     
+|5. [Business Interpretation](https://github.com/leemings98-source/RetailSales/blob/main/README.md#business-interpretation) |     
+|5. [Data Limitations](https://github.com/leemings98-source/RetailSales/blob/main/README.md#data-limitations) |     
+|6. [What I Learned](https://github.com/leemings98-source/RetailSales/blob/main/README.md#what-i-learned)     |     
 
 Links for easy access 
 - [Base Raw Dataset](https://drive.google.com/file/d/1Gu6dPev0gi37cOZuMHf0Qxwylf6O4Fw-/view?usp=sharing)
