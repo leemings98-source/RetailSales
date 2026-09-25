@@ -169,9 +169,12 @@ For a more in-depth look to my cleaning process click [*here*](https://drive.goo
   <img width="400" height="275" alt="5" src="https://github.com/user-attachments/assets/e1697e21-2dd4-4cf8-be9b-d6d51ea8d7eb" />
 
 
-- What changes when products are evaluated by quantity, transaction frequency, sales, or profit?
+- What changes when products are evaluated by sales volume, sales frequency, sales, or profit?
 <img width="313" height="108" alt="{82613271-CBBD-4913-A268-3021208A21A1}" src="https://github.com/user-attachments/assets/c78efe5f-8727-4e6d-8d00-4a8eb332ae3f" />
-<img width="313" height="108" alt="{A7A3ECB9-0112-4C18-B735-6C0D08F2A3A7}" src="https://github.com/user-attachments/assets/a2e6f0b9-7ca9-4968-82b0-17ca9ada6704" />
+<img width="332" height="107" alt="{3BF0BC46-DAE7-4F60-B32C-2C037CBD48CB}" src="https://github.com/user-attachments/assets/00ac4df8-effb-40af-ad94-bae8c457ac35" />
+<img width="348" height="107" alt="{2D931EC3-C0F4-453C-BFB4-761E7179C595}" src="https://github.com/user-attachments/assets/38729239-e416-492d-a597-1dadd117219e" />
+<img width="306" height="106" alt="{334439C0-C5FD-4348-9411-B5437C71A937}" src="https://github.com/user-attachments/assets/e52b08a2-43d1-440c-af69-09209fdbe899" />
+
 
 ## Key Findings
 Below is the overview page from the PowerBI dashboard and more examples are included throughout the report. The entire interactive dashboard can be downloaded [*here*](https://drive.google.com/file/d/1fpYmMaGSu_NGuuluvZNY_rD-hs1FHdj8/view?usp=sharing) 
@@ -179,13 +182,6 @@ Below is the overview page from the PowerBI dashboard and more examples are incl
 <img width="1485" height="832" alt="{5939E85D-2EF9-485B-9A5C-6B0AF96E99F2}" src="https://github.com/user-attachments/assets/626befe0-bc96-422e-b288-786448a52725" />
 
 <img width="1528" height="859" alt="{A2CAA12B-91C7-4615-A5FA-8C77AE625C89}" src="https://github.com/user-attachments/assets/f063633b-a4ad-42a4-b9cb-90f1f6dfae05" />
-
-
-As an added bonus, the image on the left shows the most popular category in each region based on sales quantity/volume while the one on the right is based on the sales count/frequency.
-
-<img width="313" height="108" alt="{82613271-CBBD-4913-A268-3021208A21A1}" src="https://github.com/user-attachments/assets/c78efe5f-8727-4e6d-8d00-4a8eb332ae3f" />
-<img width="313" height="108" alt="{A7A3ECB9-0112-4C18-B735-6C0D08F2A3A7}" src="https://github.com/user-attachments/assets/a2e6f0b9-7ca9-4968-82b0-17ca9ada6704" />
-
 
 ### Regional Customer Satisfaction
 
