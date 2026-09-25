@@ -1,10 +1,19 @@
 # E-Comm Retail Sales Performance Report WIP
 
 ## Background Overview
-This sample dataset is obtained from kaggel. Tap [*here*](https://drive.google.com/file/d/1Gu6dPev0gi37cOZuMHf0Qxwylf6O4Fw-/view?usp=sharing) for the base file. 
+This sample dataset is obtained from kaggel. Click [*here*](https://drive.google.com/file/d/1Gu6dPev0gi37cOZuMHf0Qxwylf6O4Fw-/view?usp=sharing) for the base file. 
 
 **Disclaimer I do not own this dataset,it is one of the many available datasets on kaggel with a rating of 9.8+ usability....it's just that I've forgotten which kaggel dataset it's from and thus am unable to link it back to where I got it.*
 
+
+| Table of contents|
+|-----------------------------------------------|
+[1. Project Overview](#-project_overview) |                
+|2. [Data Preparation](https://github.com/leemings98-source/RetailSales/edit/main/README.md#service-performance)      |        
+| - [Analytical Questions]()      |     
+| - [Business Interpretation]()      |     
+| - [Data Limitations]()      |     
+| - [What I Learned]()      |     
 
 Insights and recommendations are provided on the following key areas:
 
@@ -55,6 +64,85 @@ As an added bonus, the image on the left shows the most popular category in each
 
 
 
-## Self reflection
-- I should find a dataset with more accurate profit, sales price, and discount values.....This one was such a doozy. Many of the information gleaned from this dataset is far too made up....
--Metric definitions: I initially confused purchase frequency with quantity sold when identifying the most-purchased products. This highlighted the importance of defining business terms such as "most popular" before selecting a metric.
+
+## Project Overview
+
+## Data Preparation
+During the initial stages of data viewing a preliminary counting of rows was done to see how many rows the base dataset had.
+
+                          "SELECT Count(*) FROM retail_sales_dataset;"
+               
+resulted in a total of 4280 rows of data while removing the duplicates cleared up 80 rows in total.
+
+### Checking Sales Formula
+The initial lookover of the pricing, quantity, unit price and profit felt off. A quick formula testing was done to see how many invalid/sales mismatch results came back before continuing to fixing the values in the dataset.  
+
+
+               With Price_Check as(
+               SELECT
+               *,
+               quantity * unit_price * (1 - discount_pct) AS calculated_sales_amount,
+               sales_amount - (quantity * unit_price * (1 - discount_pct)) AS                                         sales_difference,
+               CASE
+                   WHEN quantity IS NULL
+                     OR unit_price IS NULL
+                     OR discount_pct IS NULL
+                      THEN 'Missing input'
+                   WHEN quantity <= 0
+                     OR quantity >= 999
+                      THEN 'Invalid quantity'
+                    WHEN ABS(
+                       sales_amount - (quantity * unit_price * (1 - discount_pct))
+                       ) > 0.01
+                       THEN 'Sales mismatch'
+                   ELSE 'Valid'
+               END AS sales_check
+                   FROM retail_sales_staging2)
+                   select sales_check, count(*) as count
+                   from Price_Check
+                   group by sales_check;
+ 
+<img width="180" height="95" alt="{25719FCE-9E8E-4422-A7B6-C9C83E98A4EC}" src="https://github.com/user-attachments/assets/8a1f1c30-784c-459e-b4c6-11d1ea6dea2f" />
+
+The total of which resulted in all 4200 counts, around 90% of calculations for the sales amount in the dataset came back as sales mismatch while the rest were either missing input or invalid quantity. Strongly suggesting that the dataset is made up of fabricated information.
+
+### Creating Age Groups
+For ease of categorization of the ages found in the data 
+
+                          SELECT
+                             age,
+                             Case 
+                                 When age is Null then 'unknown'
+                                 When age < 13 then 'Children'
+                                 When age < 20 then 'Teenagers'
+                                 When age < 31 then 'Young Adults'
+                                 When age <= 45 then 'Adults'
+                                 When age > 45 then 'Seniors'
+                             End As Age_Group
+                             From retail_sales_staging2;
+                             
+Age categorization can be seen from above where customers ages below 13 are considered as children, 13 till 19 as teenagers, 20 till 30 as young adults, 31 till 45 as adults and people over the ages of 45 as Seniors. 
+
+For a more in-depth look to my cleaning process click [*here*](https://drive.google.com/file/d/19nchITkHaSc_gpCQ88CPJWE7F-PJrp6o/view?usp=sharing) for the SQL queries used to examine, analyze and polish the dataset. The SQL also includes some EDA done.
+
+## Analytical Questions
+- Which products generate the most sales and profit?
+- How does performance differ between regions?
+- How do customer ratings vary across regions?
+- How does product/financial performance change over time?
+- What changes when products are evaluated by quantity, transaction frequency, sales, or profit?
+
+## Key Findings
+
+### Regional Customer Satisfaction
+
+### Product Performance
+
+## Business Interpretation
+
+## Data Limitations
+- Data obtainable in this dataset has many made up values specifically the profit, sales price and discount values. If values were accurate, further data cleaning could be done to rectify many of the inaccuracies.  
+
+## What I learned 
+- Metric definitions: I initially confused purchase frequency with quantity sold when identifying the most-purchased products. This highlighted the importance of defining business terms such as "most popular" before selecting a metric.
+- Slicers in Power Bi are life savers, streamlines everything. Highlights and allows for easier data comparisons between regions. Clicking on pie charts with different regions does not work the same way.
