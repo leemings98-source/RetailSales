@@ -134,25 +134,25 @@ For a more in-depth look to my cleaning process click [*here*](https://drive.goo
 ## Analytical Questions
 - Which products generate the most sales and profit?
 
-                           SELECT
-                              product_category,
-                              Round(SUM(sales_amount),2) AS Total_Sales
-                           FROM retail_sales_staging2
-                           GROUP BY product_category
-                           ORDER BY Total_Sales DESC;
+                          SELECT
+                          product_category,
+                          Round(SUM(sales_amount),2) AS Total_Sales
+                          FROM retail_sales_staging2
+                          GROUP BY product_category
+                          ORDER BY Total_Sales DESC;
   
   <img width="237" height="139" alt="{74FFAF30-F11A-4132-86E5-ADA94DBE4D52}" src="https://github.com/user-attachments/assets/d6697f02-271d-4363-ab93-c759a31bc9ab" />
 
 - How does performance differ between regions?
 
-                           SELECT*
-                           FROM (
-                           SELECT*,
-                           RANK()over(partition by region order by Total_Sales)as rnk
-                           FROM category_sales
-                           ) t
-                           WHERE rnk in (1,7)
-                           ORDER BY region, rnk desc;
+                          SELECT*
+                          FROM (
+                          SELECT*,
+                          RANK()over(partition by region order by Total_Sales)as rnk
+                          FROM category_sales
+                          ) t
+                          WHERE rnk in (1,7)
+                          ORDER BY region, rnk desc;
 
    <img width="305" height="189" alt="{00E0820D-4F56-471A-A698-AB1C26773235}" src="https://github.com/user-attachments/assets/ab333295-1b88-4ee1-9422-35b75a4bec36" />
 
@@ -161,6 +161,7 @@ For a more in-depth look to my cleaning process click [*here*](https://drive.goo
   <img width="405" height="330" alt="{D61B5847-DF7A-4A38-A4A1-240F92BB9AC4}" src="https://github.com/user-attachments/assets/84281d29-332f-44de-8c26-ef3f5de497f5" />
 
 - How does product/financial performance change over time?
+
   <img width="400" height="275" alt="1" src="https://github.com/user-attachments/assets/4916ba0a-1f94-435c-9e9d-bd65326e4c8c" />
   <img width="400" height="275" alt="2" src="https://github.com/user-attachments/assets/a92ac531-e4fb-438f-baff-7715d71c08df" />
   <img width="400" height="275" alt="3" src="https://github.com/user-attachments/assets/71ec8983-d9d2-40d0-a4a9-468344c10d46" />
@@ -169,6 +170,8 @@ For a more in-depth look to my cleaning process click [*here*](https://drive.goo
 
 
 - What changes when products are evaluated by quantity, transaction frequency, sales, or profit?
+<img width="313" height="108" alt="{82613271-CBBD-4913-A268-3021208A21A1}" src="https://github.com/user-attachments/assets/c78efe5f-8727-4e6d-8d00-4a8eb332ae3f" />
+<img width="313" height="108" alt="{A7A3ECB9-0112-4C18-B735-6C0D08F2A3A7}" src="https://github.com/user-attachments/assets/a2e6f0b9-7ca9-4968-82b0-17ca9ada6704" />
 
 ## Key Findings
 Below is the overview page from the PowerBI dashboard and more examples are included throughout the report. The entire interactive dashboard can be downloaded [*here*](https://drive.google.com/file/d/1fpYmMaGSu_NGuuluvZNY_rD-hs1FHdj8/view?usp=sharing) 
