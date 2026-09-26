@@ -20,10 +20,10 @@ The original dataset source could not be reliably identified, so the dataset is 
 |3. [Analytical Questions](https://github.com/leemings98-source/RetailSales/blob/main/README.md#analytical-questions)        |  
 |4. [Key Findings](https://github.com/leemings98-source/RetailSales/blob/main/README.md#key-findings)
 |5. [Business Interpretation](https://github.com/leemings98-source/RetailSales/blob/main/README.md#business-interpretation) |     
-|5. [Data Limitations](https://github.com/leemings98-source/RetailSales/blob/main/README.md#data-limitations) |     
-|6. [What I Learned](https://github.com/leemings98-source/RetailSales/blob/main/README.md#what-i-learned)     |     
+|6. [Data Limitations](https://github.com/leemings98-source/RetailSales/blob/main/README.md#data-limitations) |     
+|7. [What I Learned](https://github.com/leemings98-source/RetailSales/blob/main/README.md#what-i-learned)     |     
 
-Links for easy access 
+Project Resources 
 - [Base Raw Dataset](https://drive.google.com/file/d/1Gu6dPev0gi37cOZuMHf0Qxwylf6O4Fw-/view?usp=sharing)
 - [Interactive PowerBI Dashboard](https://drive.google.com/file/d/1fpYmMaGSu_NGuuluvZNY_rD-hs1FHdj8/view?usp=sharing)
 - [SQL Data Cleaning and EDA](https://drive.google.com/file/d/19nchITkHaSc_gpCQ88CPJWE7F-PJrp6o/view?usp=sharing)
@@ -43,7 +43,7 @@ Analyze retail transaction data to understand the drivers of sales and profit, i
 7.  How reliable are the dataset's reported sales and profit values?
 
 ### Data Structure Overview
-The dataset's base structure is made up of one table and 20 columns and consists of 4,200 rows of data.
+The dataset's base structure is made up of one table and 20 columns and consists of 4,200 rows of data providing a suitable sample for exploratory analysis.
 | Column | Meaning | Type |
 |---------|--------------------|----------------------------|
 |Order id|Unique order identifier|ID|              
@@ -72,10 +72,10 @@ During the initial stages of data viewing a preliminary counting of rows was don
 
                           "SELECT Count(*) FROM retail_sales_dataset;"
                
-resulted in a total of 4280 rows of data while removing the duplicates cleared up 80 rows in total.
+The raw dataset contained 4,280 rows. After removing 80 duplicate records, 4,200 rows remained.
 
-### Checking Sales Formula
-The initial lookover of the pricing, quantity, unit price and profit felt off. A quick formula testing was done to see how many invalid/sales mismatch results came back before continuing to fixing the values in the dataset.  
+### Validating the Sales Formula
+The initial lookover of the pricing, quantity, unit price and profit felt off. I tested the expected sales formula to identify how many records contained invalid values or sales mismatches before continuing with the data-cleaning process.
 
 
                With Price_Check as(
@@ -98,16 +98,16 @@ The initial lookover of the pricing, quantity, unit price and profit felt off. A
                    ELSE 'Valid'
                END AS sales_check
                    FROM retail_sales_staging2)
-                   select sales_check, count(*) as count
-                   from Price_Check
-                   group by sales_check;
+                   SELECT sales_check, count(*) as count
+                   FROM Price_Check
+                   GROUPBY sales_check;
  
 <img width="240" height="125" alt="{25719FCE-9E8E-4422-A7B6-C9C83E98A4EC}" src="https://github.com/user-attachments/assets/8a1f1c30-784c-459e-b4c6-11d1ea6dea2f" />
 
-The total of which resulted in all 4200 counts, around 90% of calculations for the sales amount in the dataset came back as sales mismatch while the rest were either missing input or invalid quantity.The dataset's sales values cannot be reliably reproduced from quantity, unit price and discount percentage using the assumed formula.
+The validation covered all 4,200 records. Approximately 90% of the records were classified as sales mismatches, while the remaining records contained either missing inputs or invalid quantities. This indicates that the reported sales amounts cannot generally be reproduced using the assumed quantity × unit price × (1 − discount) formula.
 
 ### Creating Age Groups
-For ease of categorization of the ages found in the data 
+For easier analysis, customer ages were grouped into the following categories: 
 
                           SELECT
                              age,
@@ -121,7 +121,7 @@ For ease of categorization of the ages found in the data
                              End As Age_Group
                              From retail_sales_staging2;
                              
-Age categorization can be seen from above where customers ages below 13 are considered as children, 13 till 19 as teenagers, 20 till 30 as young adults, 31 till 45 as adults and people over the ages of 45 as Seniors. 
+Age categorization can be seen from above where customer's ages below 13 are considered as children, 13 till 19 as teenagers, 20 till 30 as young adults, 31 till 45 as adults and people over the ages of 45 as Seniors. 
 
 For a more in-depth look to my cleaning process click [*here*](https://drive.google.com/file/d/19nchITkHaSc_gpCQ88CPJWE7F-PJrp6o/view?usp=sharing) for the SQL queries used to examine, analyze and polish the dataset. The SQL also includes some EDA done.
 
@@ -139,13 +139,13 @@ For a more in-depth look to my cleaning process click [*here*](https://drive.goo
 
 - How does performance differ between regions?
 
-                          SELECT*
+                          SELECT *
                           FROM (
-                          SELECT*,
-                          RANK()over(partition by region order by Total_Sales)as rnk
+                          SELECT *,
+                          RANK()OVER(partition by region order by Total_Sales)as rnk
                           FROM category_sales
                           ) t
-                          WHERE rnk in (1,7)
+                          WHERE rnk IN (1,7)
                           ORDER BY region, rnk desc;
 
    <img width="305" height="189" alt="{00E0820D-4F56-471A-A698-AB1C26773235}" src="https://github.com/user-attachments/assets/ab333295-1b88-4ee1-9422-35b75a4bec36" />
@@ -154,7 +154,7 @@ For a more in-depth look to my cleaning process click [*here*](https://drive.goo
   
   <img width="405" height="330" alt="{D61B5847-DF7A-4A38-A4A1-240F92BB9AC4}" src="https://github.com/user-attachments/assets/84281d29-332f-44de-8c26-ef3f5de497f5" />
 
-- How does product/financial performance change over time?
+- How does product and financial performance change over time?
 
   <img width="400" height="275" alt="1" src="https://github.com/user-attachments/assets/4916ba0a-1f94-435c-9e9d-bd65326e4c8c" />
   <img width="400" height="275" alt="2" src="https://github.com/user-attachments/assets/a92ac531-e4fb-438f-baff-7715d71c08df" />
@@ -171,8 +171,7 @@ For a more in-depth look to my cleaning process click [*here*](https://drive.goo
 
 
 ## Key Findings
-
-Within the dataset, annual profit fluctuates after 2020, with approximately RM3M changes between certain years, hovering between earning around 9m and 11m. Key Point Indicators have shown year-over-year Electronics' domination over the best selling category staying at an all time high. Managing to earn a *minimum of 32%* to a *maximum of 49%* of *total profit* over the 5 year period.
+Annual profit fluctuates after 2020, with reported annual profit ranging from approximately RM9 million to RM11 million. Electronics remained the leading category by reported profit, contributing between 32% and 49% of total profit across the five-year period.
 
 Below is the overview page from the PowerBI dashboard and more examples are included throughout the report. The entire interactive dashboard can be downloaded [*here*](https://drive.google.com/file/d/1fpYmMaGSu_NGuuluvZNY_rD-hs1FHdj8/view?usp=sharing) 
 
@@ -181,18 +180,18 @@ Below is the overview page from the PowerBI dashboard and more examples are incl
 <img width="1528" height="859" alt="{A2CAA12B-91C7-4615-A5FA-8C77AE625C89}" src="https://github.com/user-attachments/assets/f063633b-a4ad-42a4-b9cb-90f1f6dfae05" />
 
 ### Regional Customer Satisfaction
-- *Customer satisfaction* over all regions seems to *average* out to around *2.75*. Making service to be fairly ordinary to the majority of customers.
-- The *East Region* has the *highest customer satisfaction score* - 2.86, as well as the lowest counts of returns amongst all regions.
-- *Central* and *West* Region respectively both scored the *lowest* on the *average customer satisfaction* (with 0.01 difference between the two), had more counts of 1 star reviews over 5 star reviews compared to the other 3 regions.
--  Central Region also earned the lowest sales amount compared to the other regions only reaching 55.32%(RM40.67M) of the highest sales amount, South's RM73.52M.
+- Average customer satisfaction across all regions is approximately 2.75, indicating relatively moderate reported satisfaction.
+- The East region has the highest average customer satisfaction score (2.86) and the lowest number of returns among the regions.
+- Central and West had the lowest average customer satisfaction scores, with only a 0.01-point difference between them. Both regions also recorded more 1-star reviews than 5-star reviews.
+- Central had the lowest reported sales amount at RM40.67 million, representing 55.32% of South's RM73.52 million.
 
 ### Product Performance
-- *Electronics* strongly dominates the entire sales ranking generating the *most sales amount* due to their high pricings, while Groceries suffers due to their lower pricings. Of course this isn't indicative to the sales capability each category has, just a measure of the sales amount garnered.
-- During *2021 Tennis Rackets* managed to garner the position of the *top sales product* amidst the monopoly of electronic products. Bumping up the Sports category to 2nd place with *4M more* in *sales amount* than the *Furniture* category(the original 2nd place).
+- Electronics generates the highest reported sales amount, partly because its products have higher prices, while the Grocery category generates lower reported sales due to lower product prices.However, this does not necessarily indicate the sales volume or demand of each category; it only reflects the reported sales value
+- In 2021, Tennis Rackets became the highest-selling individual product despite Electronics dominating the overall category rankings.This also moved Sports into second place among categories, with approximately RM4 million more in reported sales than Furniture, which had previously held second place
   
 - ### Recommendations:
-- Investigate the drivers of lower satisfaction in Central and West, particularly the higher volume of 1-star reviews. The East region could provide a useful comparison point as it records higher average satisfaction and fewer returns
-- Profit changed by approximately RM3M between selected years. Further analysis could investigate whether this movement was associated with changes in product mix, regional performance, discounts, returns, order volume or other measurable factors
+- Investigate the drivers of lower satisfaction in the Central and West regions, particularly the higher volume of 1-star reviews. The East region could provide a useful comparison point as it records higher average satisfaction and fewer returns
+- Profit changed by approximately RM3 Million between selected years. Further analysis could investigate whether this movement was associated with changes in product mix, regional performance, discounts, returns, order volume or other measurable factors
 
 
 
