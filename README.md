@@ -7,10 +7,11 @@
 
 
 ## Background Overview
-This sample dataset is obtained from kaggel. Click [*here*](https://drive.google.com/file/d/1Gu6dPev0gi37cOZuMHf0Qxwylf6O4Fw-/view?usp=sharing) for the base file. 
+*Dataset*: Publicly available synthetic retail/e-commerce transaction dataset.
+*Records*: 4,280 raw rows / 4,200 rows after duplicate removal.
+*Scope*: Customer demographics, orders, products, pricing, discounts, sales, profit, shipping, satisfaction and returns.
 
-**Disclaimer I do not own this dataset,it is one of the many available datasets on kaggel with a rating of 9.8+ usability....it's just that I've forgotten which kaggel dataset it's from and thus am unable to link it back to where I got it.*
-
+The original dataset source could not be reliably identified, so the dataset is treated as an external sample dataset rather than as verified business data.
 
 | Table of contents|
 |---------------------------------------------------------|
@@ -65,15 +66,6 @@ The dataset's base structure is made up of one table and 20 columns and consists
 |Return Flag||Boolean|        
 |Order Status|||
 |Days to Ship||Numeric|
-
-
-<img width="285" height="620" alt="{750A6AFC-1017-4C3E-B243-D87E63B8ACA8}" src="https://github.com/user-attachments/assets/cc0c1719-a6ff-4b9d-9d09-99ac4b74d92c" />
-
-Insights and recommendations are provided on the following key areas:
-
-- Product Level Performance: An analysis of the dataset's various product lines, understanding their impact on sales and returns.
-- Regional Comparisons: An evaluation of sales and profit by region.
-- Customer Happiness: An evaluation of customer satisfaction by region.
 
 ## Data Preparation
 During the initial stages of data viewing a preliminary counting of rows was done to see how many rows the base dataset had.
