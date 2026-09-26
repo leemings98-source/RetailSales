@@ -49,23 +49,23 @@ The dataset's base structure is made up of one table and 20 columns and consists
 |Order id|Unique order identifier|ID|              
 |Order date|Date of transaction|Date|      
 |Customer Id|Unique order identifier|ID|
-|Customer Name| Customer Name||
+|Customer Name| Customer Name|String|
 |Age| Customer Age|Numeric|
-|Gender| Customer Gender||
-|Region|Region Product is Purchased||
-|City| City Product is Purchased||
-|Product Name|||        
-|Quantity||Numeric|
-|Unit Price||Numeric|
-|Discount pct||Numeric| 
-|Sales Amount||Numeric|
-|Profit||Numeric|
-|Shipping Costs||Numeric|
-|Payment Method|||
-|Customer Satisfaction|Customer rating|Numeric|               
-|Return Flag||Boolean|        
-|Order Status|||
-|Days to Ship||Numeric|
+|Gender| Customer Gender|String|
+|Region|Region Product is Purchased|String|
+|City| City Product is Purchased|String|
+|Product Name| Item identification |String|        
+|Quantity| Purchased quantity|Numeric|
+|Unit Price | Price per unit |Numeric|
+|Discount pct| Discount applied|Numeric| 
+|Sales Amount| Reported transaction value|Numeric|
+|Profit| Reported Profit|Numeric|
+|Shipping Costs| Delivery costs |Numeric|
+|Payment Method| Method used to purchase |String|
+|Customer Satisfaction| Customer rating |Numeric|               
+|Return Flag| Whether order was returned |Boolean|        
+|Order Status | Completion of delivery status |String|
+|Days to Ship| Days used to ship returns |Numeric|
 
 ## Data Preparation
 During the initial stages of data viewing a preliminary counting of rows was done to see how many rows the base dataset had.
