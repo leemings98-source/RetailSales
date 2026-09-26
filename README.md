@@ -29,20 +29,30 @@ Links for easy access
 
 
 ## Project Overview
+### Objective
+Analyze retail transaction data to understand the drivers of sales and profit, identify regional differences in customer satisfaction and returns, and evaluate product performance across multiple business metrics.
+
+#### Key Business questions that will be explored [jump to section](https://github.com/leemings98-source/RetailSales/blob/main/README.md#analytical-questions)
+1. Which product categories generate the most sales and profit?
+2. Which products perform differently when measured by revenue, quantity and order frequency?
+3. How does sales and profit performance vary by region?
+4.  How does customer satisfaction differ between regions?
+5.  Are lower satisfaction scores associated with higher return rates?
+6.  How has product and financial performance changed over time?
+7.  How reliable are the dataset's reported sales and profit values?
 
 ### Data Structure Overview
 The dataset's base structure is made up of one table and 20 columns and consists of 4,200 rows of data.
-
 | Column | Meaning | Type |
 |---------|--------------------|----------------------------|
 |Order id|Unique order identifier|ID|              
 |Order date|Date of transaction|Date|      
 |Customer Id|Unique order identifier|ID|
-|Customer Name|||
-|Age||Numeric|
-|Gender|||
-|Region|||
-|City|||
+|Customer Name| Customer Name||
+|Age| Customer Age|Numeric|
+|Gender| Customer Gender||
+|Region|Region Product is Purchased||
+|City| City Product is Purchased||
 |Product Name|||        
 |Quantity||Numeric|
 |Unit Price||Numeric|
@@ -102,7 +112,7 @@ The initial lookover of the pricing, quantity, unit price and profit felt off. A
  
 <img width="240" height="125" alt="{25719FCE-9E8E-4422-A7B6-C9C83E98A4EC}" src="https://github.com/user-attachments/assets/8a1f1c30-784c-459e-b4c6-11d1ea6dea2f" />
 
-The total of which resulted in all 4200 counts, around 90% of calculations for the sales amount in the dataset came back as sales mismatch while the rest were either missing input or invalid quantity. Strongly suggesting that the dataset is made up of fabricated information.
+The total of which resulted in all 4200 counts, around 90% of calculations for the sales amount in the dataset came back as sales mismatch while the rest were either missing input or invalid quantity.The dataset's sales values cannot be reliably reproduced from quantity, unit price and discount percentage using the assumed formula.
 
 ### Creating Age Groups
 For ease of categorization of the ages found in the data 
@@ -189,16 +199,32 @@ Below is the overview page from the PowerBI dashboard and more examples are incl
 - During *2021 Tennis Rackets* managed to garner the position of the *top sales product* amidst the monopoly of electronic products. Bumping up the Sports category to 2nd place with *4M more* in *sales amount* than the *Furniture* category(the original 2nd place).
   
 - ### Recommendations:
-- Investigate the drivers of lower satisfaction in Central and West, particularly the higher volume of 1-star reviews. The East region could provide a useful comparison point because it records higher average satisfaction and fewer returns
-- Look into the the years 2022 and 2024 to see why profit sales dropped by 3M and increased by 3M in the next years. Specifically why 3M? Was there something similarly done that attributed to the 3M loss?
+- Investigate the drivers of lower satisfaction in Central and West, particularly the higher volume of 1-star reviews. The East region could provide a useful comparison point as it records higher average satisfaction and fewer returns
+- Profit changed by approximately RM3M between selected years. Further analysis could investigate whether this movement was associated with changes in product mix, regional performance, discounts, returns, order volume or other measurable factors
 
 
 
 ## Business Interpretation
 
-## Data Limitations
-- Data obtainable in this dataset has many made up values specifically the profit, sales price and discount values. If values were accurate, further data cleaning could be done to replace many of the inaccuracies.  
+### Product performance
+Electronics is the largest contributor to reported sales/profit, indicating that overall financial performance is heavily influenced by this category. However, revenue concentration should be considered separately from sales volume because higher-priced products can generate greater revenue without necessarily having higher unit demand.
+
+### Regional performance
+The East region records the highest average customer satisfaction and lowest number of returns, while Central and West record lower satisfaction. These differences could be investigated further using return reasons, shipping performance, product mix and order characteristics.
+
+### Data quality
+The reported financial fields contain substantial inconsistencies when compared against a calculated sales measure. Therefore, conclusions involving absolute sales, discounts or profit should be treated as exploratory rather than representative of verified business performance.
+
+### Next analysis
+A useful next step would be to investigate the relationship between satisfaction, returns, shipping time and product category to determine whether operational factors are associated with customer experience.
+
+## Data Quality Limitations
+- The dataset contains substantial inconsistencies between reported financial fields and independently calculated values. In particular, reported sales amounts frequently cannot be reproduced using quantity, unit price and discount percentage.
+
+Because the underlying calculation methodology and original dataset provenance could not be fully verified, financial metrics should be treated as exploratory rather than as representative of actual retail performance.
+
+The dataset should therefore be used to demonstrate analytical methodology rather than to draw conclusions about a real retailer.  
 
 ## What I learned 
-- Metric definitions: I initially confused purchase frequency with quantity sold when identifying the most-purchased products. This highlighted the importance of defining business terms such as "most popular" before selecting a metric.
-- Slicers in Power Bi are life savers, streamlines everything. Highlights and allows for easier data comparisons between regions. Clicking on pie charts with different regions does not work the same way.
+- Metric definitions: I initially interpreted purchase frequency and quantity sold as equivalent measures of product popularity. This highlighted the importance of defining business metrics precisely before performing comparisons.
+- Dashboard design: Interactive slicers made it easier to compare regional performance and identify differences that were less visible in aggregate views.
