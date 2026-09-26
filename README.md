@@ -35,26 +35,26 @@ The dataset's base structure is made up of one table and 20 columns and consists
 
 | Column | Meaning | Type |
 |---------|--------------------|----------------------------|
-|Order id||               
-|Order date||        
-|Customer Id||
-|Customer Name||
-|Age|| 
-|Gender||
-|Region||
-|City||               
-|Product Name||        
-|Quantity||
-|Unit Price||
-|Discount pct|| 
-|Sales Amount||
-|Profit||
-|Shipping Costs||
-|Payment Method||
-|Customer Satisfaction||               
-|Return Flag||        
-|Order Status||
-|Days to Ship||
+|Order id|Unique order identifier|ID|              
+|Order date|Date of transaction|Date|      
+|Customer Id|Unique order identifier|ID|
+|Customer Name|||
+|Age||Numeric|
+|Gender|||
+|Region|||
+|City|||
+|Product Name|||        
+|Quantity||Numeric|
+|Unit Price||Numeric|
+|Discount pct||Numeric| 
+|Sales Amount||Numeric|
+|Profit||Numeric|
+|Shipping Costs||Numeric|
+|Payment Method|||
+|Customer Satisfaction|Customer rating|Numeric|               
+|Return Flag||Boolean|        
+|Order Status|||
+|Days to Ship||Numeric|
 
 
 <img width="285" height="620" alt="{750A6AFC-1017-4C3E-B243-D87E63B8ACA8}" src="https://github.com/user-attachments/assets/cc0c1719-a6ff-4b9d-9d09-99ac4b74d92c" />
