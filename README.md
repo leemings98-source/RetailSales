@@ -1,4 +1,10 @@
-# E-Comm Retail Sales Performance Report WIP
+# E-Commerce Retail Sales Analysis — SQL & Power BI
+*Data cleaning, validation, exploratory analysis and business reporting using SQL and Power BI.*
+
+## Dashboard preview
+<img width="1485" height="832" alt="{5939E85D-2EF9-485B-9A5C-6B0AF96E99F2}" src="https://github.com/user-attachments/assets/626befe0-bc96-422e-b288-786448a52725" />
+<img width="1528" height="859" alt="{A2CAA12B-91C7-4615-A5FA-8C77AE625C89}" src="https://github.com/user-attachments/assets/f063633b-a4ad-42a4-b9cb-90f1f6dfae05" />)
+
 
 ## Background Overview
 This sample dataset is obtained from kaggel. Click [*here*](https://drive.google.com/file/d/1Gu6dPev0gi37cOZuMHf0Qxwylf6O4Fw-/view?usp=sharing) for the base file. 
@@ -25,7 +31,31 @@ Links for easy access
 ## Project Overview
 
 ### Data Structure Overview
-The dataset's base structure is made up of one table and 20 columns, consisting of: 'Order id', 'Order date', 'Customer Id', 'Customer Name', 'Age' ,'Gender', 'Region', 'City', 'Product Name', 'Quantity', 'Unit Price', 'Discount pct', 'Sales Amount', 'Profit', 'Shipping Costs', 'Payment Method', 'Customer Satisfaction', 'Return Flag', 'Order Status', and 'Days to Ship'. It also consists of a total of 4,200 rows of data making it an ideal dataset to clean up and analyze.
+The dataset's base structure is made up of one table and 20 columns and consists of 4,200 rows of data.
+
+| Column | Meaning | Type |
+|---------|--------------------|----------------------------|
+|Order id||               
+|Order date||        
+|Customer Id||
+|Customer Name||
+|Age|| 
+|Gender||
+|Region||
+|City||               
+|Product Name||        
+|Quantity||
+|Unit Price||
+|Discount pct|| 
+|Sales Amount||
+|Profit||
+|Shipping Costs||
+|Payment Method||
+|Customer Satisfaction||               
+|Return Flag||        
+|Order Status||
+|Days to Ship||
+
 
 <img width="285" height="620" alt="{750A6AFC-1017-4C3E-B243-D87E63B8ACA8}" src="https://github.com/user-attachments/assets/cc0c1719-a6ff-4b9d-9d09-99ac4b74d92c" />
 
