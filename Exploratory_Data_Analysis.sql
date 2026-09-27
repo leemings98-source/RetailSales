@@ -32,15 +32,26 @@ ORDER BY year, month;
 -- 2.0 Exploratory Data Analysis (EDA)
 -- ===================================================================================================================================================================================================================================================================================================================================================================================================================================================
 
--- Q1. Which category generates the highest sales?
+-- Q1. Which category generates the highest sales and profit?
 SELECT
     product_category,
-    Round(SUM(sales_amount),2) AS Total_Sales
+    Round(SUM(sales_amount),2) AS Total_Sales,
+    Round(SUM(profit),2) AS Total_Profit
 FROM retail_sales_staging2
 GROUP BY product_category
 ORDER BY Total_Sales DESC;
 
--- Q1.5 Which category has the highest/lowest sales at each region?
+-- Q1.2 Which product generates the highest sales and profit?
+SELECT
+    product_name,
+    Round(SUM(sales_amount),2) AS Total_Sales,
+    Round(SUM(profit),2) AS Total_Profit
+FROM retail_sales_staging2
+GROUP BY product_name
+ORDER BY Total_Sales DESC
+limit 5;
+
+-- Q1.3 Which category has the highest/lowest sales at each region?
 
 with category_sales as(
 select 
@@ -58,7 +69,6 @@ from category_sales
 ) t
 where rnk in (1,7)
 order by region, rnk desc;
-
 
 -- Q2. Which gender spends more?
 
