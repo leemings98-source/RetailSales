@@ -20,7 +20,7 @@ The original dataset source could not be reliably identified, so the dataset is 
 |3. [Analytical Questions](https://github.com/leemings98-source/RetailSales/blob/main/README.md#analytical-questions)        |  
 |4. [Key Findings](https://github.com/leemings98-source/RetailSales/blob/main/README.md#key-findings)
 |5. [Business Interpretation](https://github.com/leemings98-source/RetailSales/blob/main/README.md#business-interpretation) |     
-|6. [Data Limitations](https://github.com/leemings98-source/RetailSales/blob/main/README.md#data-limitations) |     
+|6. [Data Quality Limitations](https://github.com/leemings98-source/RetailSales/blob/main/README.md#data-limitations) |     
 |7. [What I Learned](https://github.com/leemings98-source/RetailSales/blob/main/README.md#what-i-learned)     |     
 
 Project Resources 
