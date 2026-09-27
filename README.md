@@ -33,7 +33,7 @@ Project Resources
 ### Objective
 Analyze retail transaction data to understand the drivers of sales and profit, identify regional differences in customer satisfaction and returns, and evaluate product performance across multiple business metrics.
 
-#### Key Business questions that will be explored [jump to section](https://github.com/leemings98-source/RetailSales/blob/main/README.md#analytical-questions)
+#### Key Business questions that will be explored 
 1. Which product categories generate the most sales and profit?
 2. Which products perform differently when measured by revenue, quantity and order frequency?
 3. How does sales and profit performance vary by region?
@@ -43,8 +43,8 @@ Analyze retail transaction data to understand the drivers of sales and profit, i
 7.  How reliable are the dataset's reported sales and profit values?
 
 ### Data Structure Overview
-The dataset's base structure is made up of one table and 20 columns and consists of 4,200 rows of data providing a suitable sample for exploratory analysis.
-| Column | Meaning | Type |
+The dataset's base structure is made up of one table and 20 columns and consists of 4,200 rows of data providing a suitable sample for exploratory analysis. The columns contained in the dataset is as follows: 
+| *Column* | *Meaning* | *Type* |
 |---------|--------------------|----------------------------|
 |Order id|Unique order identifier|ID|              
 |Order date|Date of transaction|Date|      
@@ -101,8 +101,12 @@ The initial lookover of the pricing, quantity, unit price and profit felt off. I
                    SELECT sales_check, count(*) as count
                    FROM Price_Check
                    GROUPBY sales_check;
- 
-<img width="240" height="125" alt="{25719FCE-9E8E-4422-A7B6-C9C83E98A4EC}" src="https://github.com/user-attachments/assets/8a1f1c30-784c-459e-b4c6-11d1ea6dea2f" />
+
+|*sales_check* | *count* |
+|-------------|-------|
+| Sales mismatch | 3932 |
+| Invalid quantity | 26 |
+| Missing Input | 242 |
 
 The validation covered all 4,200 records. Approximately 90% of the records were classified as sales mismatches, while the remaining records contained either missing inputs or invalid quantities. This indicates that the reported sales amounts cannot generally be reproduced using the assumed quantity × unit price × (1 − discount) formula.
 
@@ -123,20 +127,29 @@ For easier analysis, customer ages were grouped into the following categories:
                              
 Age categorization can be seen from above where customer's ages below 13 are considered as children, 13 till 19 as teenagers, 20 till 30 as young adults, 31 till 45 as adults and people over the ages of 45 as Seniors. 
 
-For a more in-depth look to my cleaning process click [*here*](https://drive.google.com/file/d/19nchITkHaSc_gpCQ88CPJWE7F-PJrp6o/view?usp=sharing) for the SQL queries used to examine, analyze and polish the dataset. The SQL also includes some EDA done.
+For a more in-depth look to my cleaning process click [*here*](https://drive.google.com/file/d/19nchITkHaSc_gpCQ88CPJWE7F-PJrp6o/view?usp=sharing) to obtain the SQL queries used to examine, analyze and polish the dataset. The SQL also includes some EDA done.
 
 ## Analytical Questions
 - Which products generate the most sales and profit?
 
                           SELECT
-                          product_category,
-                          Round(SUM(sales_amount),2) AS Total_Sales
+                            product_name,
+                            Round(SUM(sales_amount),2) AS Total_Sales,
+                            Round(SUM(profit),2) AS Total_Profit
                           FROM retail_sales_staging2
-                          GROUP BY product_category
-                          ORDER BY Total_Sales DESC;
-  
-  <img width="237" height="139" alt="{74FFAF30-F11A-4132-86E5-ADA94DBE4D52}" src="https://github.com/user-attachments/assets/d6697f02-271d-4363-ab93-c759a31bc9ab" />
+                          GROUP BY product_name
+                          ORDER BY Total_Sales DESC
+                          LIMIT 5;
+                          
+|*product_name*|*Total_Sales* |*Total_Profit*|
+|-----------------|-------------|--------------|
+| Tablet | 35,826,512.05 | 4,743,012.69 |
+| Laptop | 26,890,530.98 | 3,152,997.85 |
+| Headphones | 25,656,395.25 | 3,029,210.10 |
+| Smartwatch | 24,600,859.02 | 2,975,430.27 |
+| Camera | 22,118,178.64 | 2,682,475.49 |
 
+  
 - How does performance differ between regions?
 
                           SELECT *
@@ -147,8 +160,21 @@ For a more in-depth look to my cleaning process click [*here*](https://drive.goo
                           ) t
                           WHERE rnk IN (1,7)
                           ORDER BY region, rnk desc;
+  
+| *region* | *product_category*| *Total_Sales* | *rnk* |
+|--------|----------------|-------------|------|
+| Central | Electronics| 21,246,707.44 |7|
+| Central | Groceries | 184,993.26 |1|
+| East | Electronics| 29,820,395.65 |7|
+| East | Groceries | 179,275.08 |1|
+| North | Electronics| 25,271,607.20 |7|
+| North | Groceries | 288,288.24 |1|
+| South | Electronics| 51,186,745.52 |7|
+| South | Groceries | 175,414.46 |1|
+| West | Electronics| 28,117,121.76 |7|
+| West | Groceries | 181,108.79 |1|
 
-   <img width="305" height="189" alt="{00E0820D-4F56-471A-A698-AB1C26773235}" src="https://github.com/user-attachments/assets/ab333295-1b88-4ee1-9422-35b75a4bec36" />
+Across all regions there were little difference in terms of product sales. Electronics and groceries being found to be the undisputed top and bottom ranking categories for all regions.
 
 - How do customer ratings vary across regions?
   
@@ -156,18 +182,50 @@ For a more in-depth look to my cleaning process click [*here*](https://drive.goo
 
 - How does product and financial performance change over time?
 
-  <img width="400" height="275" alt="1" src="https://github.com/user-attachments/assets/4916ba0a-1f94-435c-9e9d-bd65326e4c8c" />
-  <img width="400" height="275" alt="2" src="https://github.com/user-attachments/assets/a92ac531-e4fb-438f-baff-7715d71c08df" />
-  <img width="400" height="275" alt="3" src="https://github.com/user-attachments/assets/71ec8983-d9d2-40d0-a4a9-468344c10d46" />
-  <img width="400" height="275" alt="4" src="https://github.com/user-attachments/assets/e33f57c4-5639-44d2-8c90-6487197a475d" />
-  <img width="400" height="275" alt="5" src="https://github.com/user-attachments/assets/e1697e21-2dd4-4cf8-be9b-d6d51ea8d7eb" />
+<img width="461" height="337" alt="{AC770BC8-9F4E-46EF-9817-6771F4C30809}" src="https://github.com/user-attachments/assets/d8531d52-98f2-4f2b-85cc-1f2c30cb1779" />
+_________________________________________________________________________________________________________________________
 
+<img width="400" height="275" alt="1" src="https://github.com/user-attachments/assets/4916ba0a-1f94-435c-9e9d-bd65326e4c8c" />
+<img width="400" height="275" alt="2" src="https://github.com/user-attachments/assets/a92ac531-e4fb-438f-baff-7715d71c08df" />
+<img width="400" height="275" alt="3" src="https://github.com/user-attachments/assets/71ec8983-d9d2-40d0-a4a9-468344c10d46" />
+<img width="400" height="275" alt="4" src="https://github.com/user-attachments/assets/e33f57c4-5639-44d2-8c90-6487197a475d" />
+<img width="400" height="275" alt="5" src="https://github.com/user-attachments/assets/e1697e21-2dd4-4cf8-be9b-d6d51ea8d7eb" />
+  
+Product performance in terms of product category ranking have little change across the years, following the sequence of Electronics, Furniture, Sports, Clothing, Books, Beauty and Groceries. In 2021, Sports managed to become the second ranked product overtaking furniture. 
 
-- What changes when products are evaluated by sales volume, sales frequency, sales, or profit?
-<img width="313" height="108" alt="{82613271-CBBD-4913-A268-3021208A21A1}" src="https://github.com/user-attachments/assets/c78efe5f-8727-4e6d-8d00-4a8eb332ae3f" />
-<img width="332" height="107" alt="{3BF0BC46-DAE7-4F60-B32C-2C037CBD48CB}" src="https://github.com/user-attachments/assets/00ac4df8-effb-40af-ad94-bae8c457ac35" />
-<img width="348" height="107" alt="{2D931EC3-C0F4-453C-BFB4-761E7179C595}" src="https://github.com/user-attachments/assets/38729239-e416-492d-a597-1dadd117219e" />
-<img width="306" height="106" alt="{334439C0-C5FD-4348-9411-B5437C71A937}" src="https://github.com/user-attachments/assets/e52b08a2-43d1-440c-af69-09209fdbe899" />
+- What changes when products are evaluated by sales volume, sales frequency, sales amount, or profit?
+
+| *region* | *product_category* | *Sales_Volume* | *rnk* |
+|--------|----------------|-------------|------|
+| Central | Groceries | 692 |1|
+| East | Electronics | 704 |1|
+| North | Sports | 718 |1|
+| South | Clothing | 787 |1|
+| West | Clothing | 714 |1|
+ 
+| *region* | *product_category* | *Sales_Frequency* | *rnk* |
+|--------|----------------|-------------|------|
+| Central | Groceries | 119 |1|
+| East | Electronics | 135 |1|
+| North | Sports | 143 |1|
+| South | Clothing | 145 |1|
+| West | Clothing | 130 |1|
+
+| *region* | *product_category* | *Total_Sales_Amount* | *rnk* |
+|--------|----------------|-------------|------|
+| Central | Electronics | 21,246,707.44 |1|
+| East | Electronics | 29,820,395.65 |1|
+| North | Electronics | 25,271,607.20 |1|
+| South | Electronics | 51,186,745.52 |1|
+| West | Electronics | 28,117,121.76 |1|
+
+| *region* | *product_category* | *Total_Profit* | *rnk* |
+|--------|----------------|-------------|------|
+| Central | Furniture | 3,050,967.07 |1|
+| East | Electronics | 3,575,306.82 |1|
+| North | Furniture | 3,290,563.55 |1|
+| South | Electronics | 6,628,156.08 |1|
+| West | Electronics | 3,260,295.85 |1|
 
 
 ## Key Findings
@@ -187,7 +245,7 @@ Below is the overview page from the PowerBI dashboard and more examples are incl
 
 ### Product Performance
 - Electronics generates the highest reported sales amount, partly because its products have higher prices, while the Grocery category generates lower reported sales due to lower product prices.However, this does not necessarily indicate the sales volume or demand of each category; it only reflects the reported sales value
-- In 2021, Tennis Rackets became the highest-selling individual product despite Electronics dominating the overall category rankings.This also moved Sports into second place among categories, with approximately RM4 million more in reported sales than Furniture, which had previously held second place
+- In 2021, Tennis Rackets became the highest-selling individual product despite Electronics dominating the overall category rankings. This also moved Sports into second place among categories, with approximately RM4 million more in reported sales than Furniture, which had previously held second place
   
 - ### Recommendations:
 - Investigate the drivers of lower satisfaction in the Central and West regions, particularly the higher volume of 1-star reviews. The East region could provide a useful comparison point as it records higher average satisfaction and fewer returns
