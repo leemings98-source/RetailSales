@@ -8,7 +8,9 @@
 
 ## Background Overview
 *Dataset*: Publicly available synthetic retail/e-commerce transaction dataset.
+
 *Records*: 4,280 raw rows / 4,200 rows after duplicate removal.
+
 *Scope*: Customer demographics, orders, products, pricing, discounts, sales, profit, shipping, satisfaction and returns.
 
 The original dataset source could not be reliably identified, so the dataset is treated as an external sample dataset rather than as verified business data.
@@ -37,13 +39,14 @@ Analyze retail transaction data to understand the drivers of sales and profit, i
 1. Which product categories generate the most sales and profit?
 2. Which products perform differently when measured by revenue, quantity and order frequency?
 3. How does sales and profit performance vary by region?
-4.  How does customer satisfaction differ between regions?
-5.  Are lower satisfaction scores associated with higher return rates?
-6.  How has product and financial performance changed over time?
-7.  How reliable are the dataset's reported sales and profit values?
+4. How does customer satisfaction differ between regions?
+5. Are lower satisfaction scores associated with higher return rates?
+6. How has product and financial performance changed over time?
+7. How reliable are the dataset's reported sales and profit values?
 
 ### Data Structure Overview
-The dataset's base structure is made up of one table and 20 columns and consists of 4,200 rows of data providing a suitable sample for exploratory analysis. The columns contained in the dataset is as follows: 
+The dataset's base structure is made up of one table , 20 columns, and consists of 4,200 rows of data providing a suitable sample for exploratory analysis. The columns contained in the dataset is as follows: 
+
 | *Column* | *Meaning* | *Type* |
 |---------|--------------------|----------------------------|
 |Order id|Unique order identifier|ID|              
